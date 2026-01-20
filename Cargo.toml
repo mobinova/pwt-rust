@@ -1,0 +1,31 @@
+[package]
+name = "pwt-rust"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "PWT (Protobuf Web Token) for Rust"
+repository = "https://github.com/mobinova/pwt-rust"
+
+[lib]
+name = "pwt"
+path = "src/lib.rs"
+
+[dependencies]
+base64 = "0.22"
+prost = "0.12"
+prost-types = "0.12"
+thiserror = "1"
+
+hmac = "0.12"
+sha2 = "0.10"
+
+ed25519-dalek = { version = "2", features = ["pkcs8"] }
+rand_core = "0.6"
+
+rsa = { version = "0.9.10", features = ["sha2"] }
+
+[build-dependencies]
+prost-build = "0.12"
+
+[dev-dependencies]
+rand = "0.8"

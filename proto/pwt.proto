@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pwt;
+
+import "google/protobuf/struct.proto";
+
+message TokenHeader {
+  string alg = 1 [json_name = "alg"];
+  string version = 2 [json_name = "version"];
+}
+
+message TokenBody {
+  string iss = 1 [json_name = "iss"];
+  string sub = 2 [json_name = "sub"];
+  string aud = 3 [json_name = "aud"];
+  int64 exp = 4 [json_name = "exp"];
+  int64 nbf = 5 [json_name = "nbf"];
+  int64 iat = 6 [json_name = "iat"];
+  string jti = 7 [json_name = "jti"];
+  google.protobuf.Struct payload = 8 [json_name = "payload"];
+}
