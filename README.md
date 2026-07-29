@@ -22,6 +22,15 @@ serialization. Custom data lives in a protobuf `Struct` payload.
 cargo add pwt-rust
 ```
 
+The library is imported as `pwt`:
+
+```rust
+use pwt::{Token, TokenBody};
+```
+
+PWT is currently in initial development. Releases in the `0.x` series may
+include documented API changes before the public API is stabilized at `1.0.0`.
+
 ---
 
 ## Quick Start
@@ -87,8 +96,12 @@ Custom claims should be stored in the protobuf `Struct` payload.
 cargo test
 ```
 
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
+development workflow and [SECURITY.md](SECURITY.md) for reporting security
+issues.
+
 ---
 
 ## License
 
-MIT.
+Licensed under the [MIT License](LICENSE).

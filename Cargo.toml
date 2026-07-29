@@ -2,9 +2,15 @@
 name = "pwt-rust"
 version = "0.1.0"
 edition = "2021"
+rust-version = "1.81"
 license = "MIT"
 description = "PWT (Protobuf Web Token) for Rust"
+readme = "README.md"
+homepage = "https://github.com/mobinova/pwt-rust"
 repository = "https://github.com/mobinova/pwt-rust"
+documentation = "https://docs.rs/pwt-rust"
+keywords = ["authentication", "protobuf", "token", "jwt", "cryptography"]
+categories = ["authentication", "cryptography", "encoding"]
 
 [lib]
 name = "pwt"

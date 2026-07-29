@@ -7,12 +7,6 @@ use rand::rngs::OsRng;
 use rand::RngCore;
 
 fn make_body(exp_offset_secs: i64) -> TokenBody {
-    let mut body = TokenBody::default();
-    body.iss = "test".to_string();
-    body.sub = "sub".to_string();
-    body.exp = now() + exp_offset_secs;
-    body.iat = now();
-
     let mut payload = Struct::default();
     payload.fields.insert(
         "role".to_string(),
@@ -20,9 +14,15 @@ fn make_body(exp_offset_secs: i64) -> TokenBody {
             kind: Some(prost_types::value::Kind::StringValue("admin".to_string())),
         },
     );
-    body.payload = Some(payload);
 
-    body
+    TokenBody {
+        iss: "test".to_string(),
+        sub: "sub".to_string(),
+        exp: now() + exp_offset_secs,
+        iat: now(),
+        payload: Some(payload),
+        ..Default::default()
+    }
 }
 
 #[test]
@@ -75,7 +75,7 @@ fn parse_succeeds_with_ed25519() {
 
     let parsed = Token::parse(
         &token_str,
-        Some(&move |_token| Ok(Key::ed25519_public(verifying_key.clone()))),
+        Some(&move |_token| Ok(Key::ed25519_public(verifying_key))),
     )
     .expect("parse token");
 
