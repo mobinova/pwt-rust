@@ -2,7 +2,7 @@
 
 ## Development setup
 
-Install Rust 1.81 or newer and the Protocol Buffer compiler.
+Install Rust 1.85 or newer and the Protocol Buffer compiler.
 
 Run the release checks before opening a pull request:
 

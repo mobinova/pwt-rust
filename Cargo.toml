@@ -2,7 +2,7 @@
 name = "pwt-rust"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.81"
+rust-version = "1.85"
 license = "MIT"
 description = "PWT (Protobuf Web Token) for Rust"
 readme = "README.md"
