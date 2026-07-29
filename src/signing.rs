@@ -83,7 +83,7 @@ impl SigningMethod for SigningMethodEdDSA {
 
     fn verify(&self, data: &[u8], signature: &[u8], key: &Key) -> Result<(), SigningMethodError> {
         let verifying_key = match key {
-            Key::Ed25519Public(key) => key.clone(),
+            Key::Ed25519Public(key) => *key,
             Key::Bytes(bytes) => parse_ed25519_public(bytes)?,
             _ => return Err(SigningMethodError::InvalidKeyType),
         };
